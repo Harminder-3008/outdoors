@@ -1,4 +1,53 @@
-export const Contact = () => (
+import { useState } from "react";
+import axios from "axios";
+export function Contact(){  
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    type: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!form.name) newErrors.name = "Name is required";
+    if (!form.phone) newErrors.phone = "Phone is required";
+    if (!/^\d{10}$/.test(form.phone))
+      newErrors.phone = "Enter valid 10-digit phone";
+
+    if (!form.email) newErrors.email = "Email is required";
+    if (!/\S+@\S+\.\S+/.test(form.email))
+      newErrors.email = "Invalid email";
+
+    if (!form.type) newErrors.type = "Select outdoor type";
+    if (!form.message) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    try {
+      await axios.post("http://localhost:5000/send-email", form);
+      alert("Message sent successfully!");
+      setForm({ name: "", phone: "", email: "", type: "", message: "" });
+    } catch (err) {
+      alert("Error sending message");
+    }
+  };
+return(
   <div className="pt-32 pb-24 bg-white">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-20">
@@ -7,27 +56,68 @@ export const Contact = () => (
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div className="bg-accent/20 p-10 md:p-12 rounded-3xl border border-black/5">
-          <form className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-dark/60 uppercase tracking-widest">Name</label>
-                <input type="text" className="w-full bg-white border border-black/10 rounded-xl px-5 py-4 focus:border-primary outline-none transition-all" placeholder="Your Name" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-dark/60 uppercase tracking-widest">Email</label>
-                <input type="email" className="w-full bg-white border border-black/10 rounded-xl px-5 py-4 focus:border-primary outline-none transition-all" placeholder="your@email.com" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-dark/60 uppercase tracking-widest">Message</label>
-              <textarea rows={5} className="w-full bg-white border border-black/10 rounded-xl px-5 py-4 focus:border-primary outline-none transition-all resize-none" placeholder="How can we help?"></textarea>
-            </div>
-            <button className="bg-primary text-white w-full py-5 rounded-full font-bold hover:bg-primary-light transition-all shadow-lg">
-              SEND MESSAGE
-            </button>
-          </form>
+       <div className="bg-accent/20 p-10 md:p-12 rounded-3xl border border-black/5">
+      <form className="space-y-8" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Name */}
+          <div>
+            <label className="text-xs font-bold uppercase">Name</label>
+            <input name="name" value={form.name} onChange={handleChange}
+              className="w-full border rounded-xl px-5 py-4"
+            />
+            <p className="text-red-500 text-sm">{errors.name}</p>
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="text-xs font-bold uppercase">Phone</label>
+            <input name="phone" value={form.phone} onChange={handleChange}
+              className="w-full border rounded-xl px-5 py-4"
+            />
+            <p className="text-red-500 text-sm">{errors.phone}</p>
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="text-xs font-bold uppercase">Email</label>
+            <input name="email" value={form.email} onChange={handleChange}
+              className="w-full border rounded-xl px-5 py-4"
+            />
+            <p className="text-red-500 text-sm">{errors.email}</p>
+          </div>
+
+          {/* Type */}
+          <div>
+            <label className="text-xs font-bold uppercase">Type of Outdoors</label>
+            <select name="type" value={form.type} onChange={handleChange}
+              className="w-full border rounded-xl px-5 py-4"
+            >
+              <option value="">Select</option>
+              <option>Glass Verandas</option>
+              <option>Pergolas</option>
+              <option>Glass Rooms</option>
+              <option>Outdoor Kitchens</option>
+            </select>
+            <p className="text-red-500 text-sm">{errors.type}</p>
+          </div>
         </div>
+
+        {/* Message */}
+        <div>
+          <label className="text-xs font-bold uppercase">Message</label>
+          <textarea name="message" value={form.message} onChange={handleChange}
+            rows={5}
+            className="w-full border rounded-xl px-5 py-4"
+          />
+          <p className="text-red-500 text-sm">{errors.message}</p>
+        </div>
+
+        <button className="bg-primary text-white w-full py-5 rounded-full font-bold">
+          SEND MESSAGE
+        </button>
+      </form>
+    </div>
 
         <div className="space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -60,3 +150,4 @@ export const Contact = () => (
     </div>
   </div>
 );
+}

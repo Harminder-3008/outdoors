@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, Star, Shield, Clock, CheckCircle2, MessageSquare, Wrench, Ruler, Calendar } from 'lucide-react';
 import { HeroSlider } from '../components/HeroSlider';
+import kitchenImg from '../assets/images/kitchen.jpg';
 
 export const Home = () => (
   <div className="bg-light">
@@ -16,29 +17,39 @@ export const Home = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">OUR STORY</span>
+            <span className="text-primary font-bold tracking-widest text-md uppercase mb-4 block">
+              OUR STORY
+            </span>
+
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-dark">
-              Transforming Gardens into <br />
-              <span className="text-primary">Living Masterpieces</span>
+              Crafting Exceptional <br />
+              <span className="text-primary">Outdoor Living Experiences</span>
             </h2>
+
             <p className="text-muted text-lg leading-relaxed mb-10">
-              With over 15 years of experience, we specialize in creating high-end outdoor spaces that combine architectural elegance with practical functionality. Our bespoke solutions are designed to enhance your lifestyle and add value to your home.
+              At Outdoors, we believe every outdoor space has the potential to become something extraordinary. With over 15 years of expertise, we design and build premium outdoor environments that seamlessly blend natural beauty with modern functionality. Our bespoke solutions are crafted to elevate your lifestyle while enhancing the value of your property.
             </p>
+
             <div className="flex gap-10">
               <div>
                 <p className="text-3xl font-display font-bold text-dark">15+</p>
-                <p className="text-[10px] uppercase tracking-widest font-bold text-muted">Years Experience</p>
+                <p className="text-[10px] uppercase tracking-widest font-bold text-muted">
+                  Years Experience
+                </p>
               </div>
               <div>
                 <p className="text-3xl font-display font-bold text-dark">1000+</p>
-                <p className="text-[10px] uppercase tracking-widest font-bold text-muted">Projects Completed</p>
+                <p className="text-[10px] uppercase tracking-widest font-bold text-muted">
+                  Projects Completed
+                </p>
               </div>
             </div>
           </motion.div>
+
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000" 
-              alt="Outdoor Living" 
+            <img
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000"
+              alt="Outdoor Living"
               className="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover"
               referrerPolicy="no-referrer"
             />
@@ -53,9 +64,9 @@ export const Home = () => (
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-dark">Our Signature Collections</h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <motion.div 
+          <motion.div
             whileHover={{ y: -5 }}
             className="md:col-span-8 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
@@ -69,7 +80,7 @@ export const Home = () => (
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             whileHover={{ y: -5 }}
             className="md:col-span-4 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
@@ -83,7 +94,7 @@ export const Home = () => (
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             whileHover={{ y: -5 }}
             className="md:col-span-4 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
@@ -97,11 +108,11 @@ export const Home = () => (
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             whileHover={{ y: -5 }}
             className="md:col-span-8 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=1200" alt="Outdoor Kitchens" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={kitchenImg} alt="Outdoor Kitchens" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
             <div className="absolute bottom-8 left-8">
               <h3 className="text-3xl font-display font-bold text-white mb-2">Outdoor Kitchens</h3>
@@ -175,7 +186,7 @@ export const Home = () => (
     </section>
 
     {/* FAQ Section */}
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-dark">Frequently Asked Questions</h2>
@@ -200,7 +211,7 @@ export const Home = () => (
     </section>
 
     {/* Service Areas Section */}
-    <section className="py-24 bg-accent/20">
+    {/* <section className="py-24 bg-accent/20">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <span className="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">LOCATIONS</span>
         <h2 className="text-3xl md:text-5xl font-display font-bold text-dark mb-12">Serving the United Kingdom</h2>
@@ -213,10 +224,10 @@ export const Home = () => (
         </div>
         <p className="mt-12 text-muted max-w-xl mx-auto">Don't see your area? Contact us to see if we can accommodate your location.</p>
       </div>
-    </section>
+    </section> */}
 
     {/* Features */}
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[

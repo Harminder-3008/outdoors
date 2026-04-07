@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle2 } from 'lucide-react';
+import kitchenImg from '../assets/images/kitchen.jpg';
 
 export const Products = () => (
   <div className="pt-32 pb-24 bg-white">
@@ -32,7 +33,7 @@ export const Products = () => (
           {
             title: "Outdoor Kitchens",
             desc: "The ultimate entertaining space. Our bespoke outdoor kitchens are designed for durability and high-performance cooking.",
-            img: "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&q=80&w=1200",
+            img: kitchenImg,
             features: ["Weatherproof Cabinetry", "Premium Grills", "Integrated Sinks"]
           }
         ].map((item, i) => (

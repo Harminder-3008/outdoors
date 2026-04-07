@@ -12,13 +12,13 @@ export const Footer = () => (
           <p className="text-muted text-sm leading-relaxed mb-8">
             Specializing in high-end architectural outdoor solutions for discerning homeowners.
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a key={i} href="#" className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-muted hover:text-primary transition-all">
+              <a key={i} href="#" className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-muted hover:text-primary transition-all">
                 <Icon size={18} />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
         
         <div>

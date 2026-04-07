@@ -1,4 +1,6 @@
 import { motion } from 'motion/react';
+import gallery_1 from '../assets/images/gallery_1.jpg';
+import gallery_4 from '../assets/images/gallery_4.jpg';
 
 export const Gallery = () => (
   <div className="pt-32 pb-24 bg-accent/20">
@@ -14,8 +16,8 @@ export const Gallery = () => (
           "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
           "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e",
           "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
-          "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e",
-          "https://images.unsplash.com/photo-1600607687940-4e2a09695d51",
+         gallery_1,
+         gallery_4,
           "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
           "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68",
           "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0"
