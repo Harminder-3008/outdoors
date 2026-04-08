@@ -14,6 +14,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-light selection:bg-primary selection:text-white">
         <ScrollProgress />
+        <ScrollToTop />
         <Navbar />
         <main>
           <Routes>
@@ -25,7 +26,6 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <ScrollToTop />
       </div>
     </Router>
   );

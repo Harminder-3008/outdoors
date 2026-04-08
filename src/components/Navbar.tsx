@@ -14,6 +14,18 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
@@ -56,31 +68,54 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 md:hidden"
           >
-            <button className="absolute top-8 right-8 text-dark" onClick={() => setIsOpen(false)}>
-              <X size={32} />
-            </button>
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`text-3xl font-display font-bold ${location.pathname === link.path ? 'text-primary' : 'text-dark'}`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
+            {/* Overlay */}
+            <div
+              className="absolute inset-0 bg-black/40"
               onClick={() => setIsOpen(false)}
-              className="bg-primary text-white px-12 py-4 rounded-full text-lg font-bold mt-4"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.4 }}
+              className="absolute right-0 top-0 h-full w-[80%] bg-white shadow-2xl flex flex-col p-10 gap-8"
             >
-              GET A QUOTE
-            </Link>
+              <button
+                className="self-end"
+                onClick={() => setIsOpen(false)}
+              >
+                <X size={28} />
+              </button>
+
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-xl font-bold ${location.pathname === link.path
+                      ? "text-primary"
+                      : "text-dark"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="bg-primary text-white px-6 py-3 rounded-full font-bold mt-4 text-center"
+              >
+                GET A QUOTE
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

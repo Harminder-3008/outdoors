@@ -1,5 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
+
 export function Contact(){  
   const [form, setForm] = useState({
     name: "",
@@ -34,19 +35,25 @@ export function Contact(){
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!validate()) return;
+  if (!validate()) return;
 
-    try {
-      await axios.post("http://localhost:5000/send-email", form);
-      alert("Message sent successfully!");
-      setForm({ name: "", phone: "", email: "", type: "", message: "" });
-    } catch (err) {
-      alert("Error sending message");
-    }
-  };
+  emailjs.send(
+    "service_id",   // from EmailJS
+    "template_id",  // from EmailJS
+    form,
+    "public_key"    // from EmailJS
+  )
+  .then(() => {
+    alert("Message sent successfully!");
+    setForm({ name: "", phone: "", email: "", type: "", message: "" });
+  })
+  .catch(() => {
+    alert("Error sending message");
+  });
+};
 return(
   <div className="pt-32 pb-24 bg-white">
     <div className="max-w-7xl mx-auto px-6">

@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // ✅ ADD THIS
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronUp } from 'lucide-react';
 
 export const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
+  const { pathname } = useLocation(); // ✅ ADD THIS
 
+  // ✅ SCROLL TO TOP ON PAGE CHANGE
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // optional (remove if instant chahida)
+    });
+  }, [pathname]);
+
+  // existing scroll button logic
   useEffect(() => {
     const toggleVisible = () => {
       if (window.pageYOffset > 300) setVisible(true);
