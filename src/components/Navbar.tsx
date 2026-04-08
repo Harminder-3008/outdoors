@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from "react-dom";
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
@@ -65,60 +66,64 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 md:hidden"
+    {createPortal(
+  <AnimatePresence>
+    {isOpen && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[9999] md:hidden"
+      >
+        {/* Overlay */}
+        <div
+          className="absolute inset-0 bg-black/60"
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Drawer */}
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.4 }}
+          className="absolute right-0 top-0 h-full w-[80%] bg-white shadow-2xl flex flex-col p-10 gap-8"
+        >
+          <button
+            className="self-end"
+            onClick={() => setIsOpen(false)}
           >
-            {/* Overlay */}
-            <div
-              className="absolute inset-0 bg-black/40"
+            <X size={28} />
+          </button>
+
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
               onClick={() => setIsOpen(false)}
-            />
-
-            {/* Drawer */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.4 }}
-              className="absolute right-0 top-0 h-full w-[80%] bg-white shadow-2xl flex flex-col p-10 gap-8"
+              className={`text-xl font-bold ${
+                location.pathname === link.path
+                  ? "text-primary"
+                  : "text-dark"
+              }`}
             >
-              <button
-                className="self-end"
-                onClick={() => setIsOpen(false)}
-              >
-                <X size={28} />
-              </button>
+              {link.name}
+            </Link>
+          ))}
 
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-xl font-bold ${location.pathname === link.path
-                      ? "text-primary"
-                      : "text-dark"
-                    }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="bg-primary text-white px-6 py-3 rounded-full font-bold mt-4 text-center"
-              >
-                GET A QUOTE
-              </Link>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="bg-primary text-white px-6 py-3 rounded-full font-bold mt-4 text-center"
+          >
+            GET A QUOTE
+          </Link>
+        </motion.div>
+      </motion.div>
+    )}
+  </AnimatePresence>,
+  document.body // 🔥 THIS IS THE MAGIC
+)}
     </nav>
   );
 };
