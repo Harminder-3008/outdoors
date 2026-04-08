@@ -36,10 +36,10 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-black/5 shadow-sm' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-black/5 shadow-sm' : 'bg-black/20 backdrop-blur-md py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className={`text-2xl font-display font-bold tracking-tighter flex items-center gap-2 group ${scrolled ? 'text-dark' : 'text-white'}`}>
-          <span className="text-primary group-hover:tracking-widest transition-all duration-500">OUT</span>DOORS
+        <Link to="/" className={`text-2xl font-display font-bold tracking-tighter flex items-center gap-2 group ${scrolled ? 'text-black' : 'text-black'}`}>
+          <span className="text-primary group-hover:tracking-widest transition-all duration-500">OUT</span><span className="text-black">DOORS</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -48,7 +48,7 @@ export const Navbar = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors relative group ${location.pathname === link.path ? 'text-primary' : scrolled ? 'text-dark/70' : 'text-white'}`}
+              className={`text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors relative group ${location.pathname === link.path ? 'text-primary' : 'text-black'}`}
             >
               {link.name}
               <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -60,7 +60,7 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className={`md:hidden p-2 glass-card rounded-lg ${scrolled ? 'text-dark' : 'text-white'}`} onClick={() => setIsOpen(!isOpen)}>
+        <button className={`md:hidden p-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 ${scrolled ? 'text-black' : 'text-black'}`} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

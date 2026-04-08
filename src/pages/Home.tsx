@@ -14,7 +14,7 @@ export const Home = () => (
     <HeroSlider />
 
     {/* Intro Section */}
-    <section className="py-24 md:py-32 bg-white">
+    <section className="pt-10 md:pt-15 pb-22 md:pb-30 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
