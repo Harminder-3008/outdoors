@@ -39,7 +39,7 @@ export const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-black/5 shadow-sm' : 'bg-black/20 backdrop-blur-md py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className={`text-2xl font-display font-bold tracking-tighter flex items-center gap-2 group ${scrolled ? 'text-black' : 'text-black'}`}>
-          <span className="text-primary group-hover:tracking-widest transition-all duration-500">OUT</span><span className="text-black">DOORS</span>
+          <span className="text-black group-hover:tracking-widest transition-all duration-500">OUT</span><span className="text-black">DOORS</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -60,7 +60,7 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className={`md:hidden p-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 ${scrolled ? 'text-black' : 'text-black'}`} onClick={() => setIsOpen(!isOpen)}>
+        <button className={`md:hidden p-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 text-black`} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
