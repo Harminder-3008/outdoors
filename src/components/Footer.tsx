@@ -37,7 +37,7 @@ export const Footer = () => (
         <div>
           <h4 className="text-xs uppercase tracking-widest font-bold mb-8 text-dark">Our Solutions</h4>
           <ul className="space-y-4 text-sm font-medium">
-            {['Glass Verandas', 'Luxury Pergolas', 'Glass Rooms', 'Outdoor Kitchens'].map((item) => (
+            {['Aluminium Verandas', 'Louvered Roofs', 'Glass Sliding Doors', 'Folding Roofs'].map((item) => (
               <li key={item}>
                 <Link to="/products" className="text-muted hover:text-primary transition-colors">{item}</Link>
               </li>
@@ -67,8 +67,8 @@ export const Footer = () => (
       <div className="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-bold text-muted">
         <p>&copy; {new Date().getFullYear()} OUTDOORS LIVING SPACES LTD.</p>
         <div className="flex gap-8">
-          <a href="#" className="hover:text-dark transition-colors">Privacy</a>
-          <a href="#" className="hover:text-dark transition-colors">Terms</a>
+          {/* <a href="#" className="hover:text-dark transition-colors">Privacy</a>
+          <a href="#" className="hover:text-dark transition-colors">Terms</a> */}
         </div>
       </div>
     </div>

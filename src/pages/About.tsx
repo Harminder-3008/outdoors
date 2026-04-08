@@ -1,3 +1,5 @@
+import slider3Img from '../assets/images/Slider 3.jpg';
+
 export const About = () => (
   <div className="pt-32 pb-24 bg-white">
     <div className="max-w-7xl mx-auto px-6">
@@ -11,7 +13,7 @@ export const About = () => (
             Our team of designers and engineers work closely with each client to deliver bespoke structures that perfectly complement their home's architecture and their personal style.
           </p>
         </div>
-        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&q=80&w=1000" alt="About Us" className="rounded-3xl shadow-xl" referrerPolicy="no-referrer" />
+        <img src={slider3Img} alt="About Us" className="rounded-3xl shadow-xl" referrerPolicy="no-referrer" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

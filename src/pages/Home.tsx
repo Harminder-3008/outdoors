@@ -3,6 +3,11 @@ import { motion } from 'motion/react';
 import { ArrowRight, Star, Shield, Clock, CheckCircle2, MessageSquare, Wrench, Ruler, Calendar } from 'lucide-react';
 import { HeroSlider } from '../components/HeroSlider';
 import kitchenImg from '../assets/images/kitchen.jpg';
+import aluminiumVerandasImg from '../assets/images/Aluminium vrandas.jpeg';
+import louveredRoofsImg from '../assets/louvered-roofs.jpeg';
+import glassSlidingDoorsImg from '../assets/images/glass image.jpg';
+import foldingRoofsImg from '../assets/images/folding roof.png';
+import slider2Img from '../assets/images/Slider 2.webp';
 
 export const Home = () => (
   <div className="bg-light">
@@ -23,11 +28,11 @@ export const Home = () => (
 
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-dark">
               Crafting Exceptional <br />
-              <span className="text-primary">Outdoor Living Experiences</span>
+              <span className="text-primary">Outdoor Living</span>
             </h2>
 
             <p className="text-muted text-lg leading-relaxed mb-10">
-              At Outdoors, we believe every outdoor space has the potential to become something extraordinary. With over 15 years of expertise, we design and build premium outdoor environments that seamlessly blend natural beauty with modern functionality. Our bespoke solutions are crafted to elevate your lifestyle while enhancing the value of your property.
+              At Outdoors, we believe every outdoor space has the potential to become something truly exceptional. With over 15 years of experience, we design and deliver premium outdoor solutions that seamlessly combine natural beauty with modern functionality. Our bespoke designs are created to enhance your lifestyle while adding lasting value to your home.
             </p>
 
             <div className="flex gap-10">
@@ -48,7 +53,7 @@ export const Home = () => (
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000"
+              src={slider2Img}
               alt="Outdoor Living"
               className="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover"
               referrerPolicy="no-referrer"
@@ -70,10 +75,10 @@ export const Home = () => (
             whileHover={{ y: -5 }}
             className="md:col-span-8 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200" alt="Verandas" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={aluminiumVerandasImg} alt="Aluminium Verandas" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
             <div className="absolute bottom-8 left-8">
-              <h3 className="text-3xl font-display font-bold text-white mb-2">Glass Verandas</h3>
+              <h3 className="text-3xl font-display font-bold text-white mb-2">Aluminium Verandas</h3>
               <Link to="/products" className="text-white/80 text-sm font-bold flex items-center gap-2 hover:text-primary transition-colors">
                 VIEW COLLECTION <ArrowRight size={16} />
               </Link>
@@ -84,10 +89,10 @@ export const Home = () => (
             whileHover={{ y: -5 }}
             className="md:col-span-4 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
-            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&q=80&w=800" alt="Pergolas" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={glassSlidingDoorsImg} alt="Glass Sliding Doors" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
             <div className="absolute bottom-8 left-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-2">Luxury Pergolas</h3>
+              <h3 className="text-2xl font-display font-bold text-white mb-2">Glass Sliding Doors</h3>
               <Link to="/products" className="text-white/80 text-sm font-bold flex items-center gap-2 hover:text-primary transition-colors">
                 EXPLORE <ArrowRight size={16} />
               </Link>
@@ -98,10 +103,10 @@ export const Home = () => (
             whileHover={{ y: -5 }}
             className="md:col-span-4 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
-            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=800" alt="Glass Rooms" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={louveredRoofsImg} alt="Louvered Roofs" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
             <div className="absolute bottom-8 left-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-2">Glass Rooms</h3>
+              <h3 className="text-2xl font-display font-bold text-white mb-2">Louvered Roofs</h3>
               <Link to="/products" className="text-white/80 text-sm font-bold flex items-center gap-2 hover:text-primary transition-colors">
                 EXPLORE <ArrowRight size={16} />
               </Link>
@@ -112,10 +117,10 @@ export const Home = () => (
             whileHover={{ y: -5 }}
             className="md:col-span-8 group relative h-[400px] overflow-hidden rounded-3xl bg-white shadow-sm"
           >
-            <img src={kitchenImg} alt="Outdoor Kitchens" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={foldingRoofsImg} alt="Folding Roofs" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent" />
             <div className="absolute bottom-8 left-8">
-              <h3 className="text-3xl font-display font-bold text-white mb-2">Outdoor Kitchens</h3>
+              <h3 className="text-3xl font-display font-bold text-white mb-2">Folding Roofs</h3>
               <Link to="/products" className="text-white/80 text-sm font-bold flex items-center gap-2 hover:text-primary transition-colors">
                 VIEW COLLECTION <ArrowRight size={16} />
               </Link>
@@ -185,31 +190,6 @@ export const Home = () => (
       </div>
     </section>
 
-    {/* FAQ Section */}
-    <section className="py-16 bg-white">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-dark">Frequently Asked Questions</h2>
-        </div>
-        <div className="space-y-6">
-          {[
-            { q: "Do I need planning permission?", a: "In many cases, our structures fall under permitted development. However, we provide full guidance and can assist with applications if required." },
-            { q: "How long does installation take?", a: "Most installations are completed within 1-3 days, depending on the complexity and size of the structure." },
-            { q: "Are the structures maintenance-free?", a: "Yes, our high-grade aluminum frames are powder-coated for durability and require only occasional cleaning with soapy water." },
-            { q: "Can I add heating and lighting later?", a: "While it's best to integrate them during installation, many of our systems can be retrofitted with heating and lighting solutions." }
-          ].map((item, i) => (
-            <details key={i} className="group bg-accent/10 rounded-2xl p-6 cursor-pointer">
-              <summary className="font-bold text-dark flex justify-between items-center list-none">
-                {item.q}
-                <ArrowRight size={20} className="group-open:rotate-90 transition-transform" />
-              </summary>
-              <p className="text-muted text-sm mt-4 leading-relaxed">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-
     {/* Service Areas Section */}
     {/* <section className="py-24 bg-accent/20">
       <div className="max-w-7xl mx-auto px-6 text-center">
@@ -226,12 +206,14 @@ export const Home = () => (
       </div>
     </section> */}
 
+    
+   
     {/* Features */}
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
-            { icon: <Shield size={32} />, title: "10-Year Warranty", desc: "Peace of mind with our comprehensive decade-long structural guarantee." },
+            { icon: <Shield size={32} />, title: "Premium Craftsmanship", desc: "Expertly designed and built to deliver lasting quality and refined finishes." },
             { icon: <Clock size={32} />, title: "Expert Installation", desc: "Professional fitting by our team of certified architectural engineers." },
             { icon: <CheckCircle2 size={32} />, title: "Weather Proof", desc: "Engineered to withstand the toughest British weather conditions." }
           ].map((item, i) => (
@@ -246,6 +228,7 @@ export const Home = () => (
         </div>
       </div>
     </section>
+    
 
     {/* CTA */}
     <section className="py-24 bg-primary">

@@ -1,23 +1,26 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import slider1Img from '../assets/images/Slider1.jpg';
+import slider2Img from '../assets/images/Slider 2.webp';
+import slider3Img from '../assets/images/Slider 3.jpg';
 
 export const HeroSlider = () => {
   const slides = [
     {
-      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920",
-      title: "Elevate Your Outdoor Lifestyle",
-      subtitle: "PREMIUM GLASS VERANDAS"
+      img: slider1Img,
+      title: "",
+      subtitle: ""
     },
     {
-      img: "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&q=80&w=1920",
-      title: "Architectural Shade Solutions",
-      subtitle: "LUXURY PERGOLAS"
+      img: slider2Img,
+      title: "",
+      subtitle: ""
     },
     {
-      img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1920",
-      title: "Year-Round Garden Sanctuaries",
-      subtitle: "GLASS ROOMS"
+      img: slider3Img,
+      title: "",
+      subtitle: ""
     }
   ];
 
@@ -49,7 +52,6 @@ export const HeroSlider = () => {
             className="w-full h-full object-cover opacity-90"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-white/30" />
         </motion.div>
       </AnimatePresence>
       
@@ -65,14 +67,6 @@ export const HeroSlider = () => {
           <h1 className="text-5xl md:text-8xl font-display font-bold mb-10 leading-tight tracking-tighter text-dark drop-shadow-sm">
             {slides[current].title}
           </h1>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/products" className="bg-primary text-white px-10 py-5 rounded-full font-bold hover:bg-primary-light transition-all shadow-xl shadow-primary/20">
-              EXPLORE OUR RANGE
-            </Link>
-            <Link to="/contact" className="bg-white text-dark px-10 py-5 rounded-full font-bold hover:bg-accent transition-all shadow-xl">
-              BOOK A CONSULTATION
-            </Link>
-          </div>
         </motion.div>
       </div>
 
