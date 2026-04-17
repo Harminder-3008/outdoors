@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from "react-dom";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [productsSubmenuOpen, setProductsSubmenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -33,6 +35,13 @@ export const Navbar = () => {
     { name: 'Products', path: '/products' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  const products = [
+    { name: 'Aluminium Verandas', path: '/products/aluminium-verandas' },
+    { name: 'Louvered Roofs', path: '/products/louvered-roofs' },
+    { name: 'Glass Sliding Doors', path: '/products/glass-sliding-doors' },
+    { name: 'Folding Roofs', path: '/products/folding-roofs' },
   ];
 
   return (
@@ -96,20 +105,75 @@ export const Navbar = () => {
             <X size={28} />
           </button>
 
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={`text-xl font-bold ${
-                location.pathname === link.path
-                  ? "text-primary"
-                  : "text-dark"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.name === 'Products') {
+              return (
+                <div key={link.name}>
+                  <button
+                    onClick={() => {
+                      if (productsSubmenuOpen) {
+                        // Second click - go to products page
+                        navigate('/products');
+                        setIsOpen(false);
+                        setProductsSubmenuOpen(false);
+                      } else {
+                        // First click - open submenu
+                        setProductsSubmenuOpen(true);
+                      }
+                    }}
+                    className={`text-xl font-bold flex items-center justify-between w-full ${
+                      location.pathname.startsWith('/products')
+                        ? "text-primary"
+                        : "text-dark"
+                    }`}
+                  >
+                    {link.name}
+                    <span className={`transform transition-transform ${productsSubmenuOpen ? 'rotate-45' : ''}`}>
+                      +
+                    </span>
+                  </button>
+                  
+                  {productsSubmenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="ml-4 mt-2 space-y-2"
+                    >
+                      {products.map((product) => (
+                        <Link
+                          key={product.name}
+                          to={product.path}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setProductsSubmenuOpen(false);
+                          }}
+                          className="block text-lg text-muted hover:text-primary transition-colors"
+                        >
+                          {product.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+              );
+            }
+            
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-xl font-bold ${
+                  location.pathname === link.path
+                    ? "text-primary"
+                    : "text-dark"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
 
           <Link
             to="/contact"
