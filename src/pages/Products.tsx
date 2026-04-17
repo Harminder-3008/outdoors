@@ -13,7 +13,8 @@ export const Products = () => (
         {[
          {
   title: "Aluminium Verandas",
-  desc: "Enhance your outdoor space with our bespoke aluminium verandas, designed for durability and year-round use in the British climate. Combining strength with a sleek, modern finish, they create a seamless transition between your home and garden.",
+  slug: "aluminium-verandas",
+  desc: "Enhance your outdoor space with our bespoke aluminium verandas, designed for durability and year-round use in the British weather. Combining strength with a sleek, modern finish, they create a seamless transition between your home and garden.",
   img: new URL('../assets/images/Aluminium vrandas.jpeg', import.meta.url).href,
   features: [
     "Durable Aluminium Framework",
@@ -23,7 +24,8 @@ export const Products = () => (
 },
 {
   title: "Louvered Roofs",
-  desc: "Enjoy complete control over your outdoor environment with our modern louvered roof systems. Designed for the British climate, adjustable slats allow you to manage sunlight, shade, and ventilation with ease.",
+  slug: "louvered-roofs",
+  desc: "Enjoy complete control over your outdoor environment with our modern louvered roof systems. Designed for the British weather, adjustable slats allow you to manage sunlight, shade, and ventilation with ease.",
  img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href,
   features: [
     "Adjustable Louvered Panels",
@@ -33,13 +35,15 @@ export const Products = () => (
 },
           {
             title: "Glass Sliding Doors",
+            slug: "glass-sliding-doors",
             desc: "Create a stunning new living space with our fully enclosed glass rooms. The perfect blend of indoor comfort and outdoor views.",
             img: new URL('../assets/images/glass image.jpg', import.meta.url).href,
             features: ["Sliding Glass Doors", "Thermal Insulation", "Secure Locking"]
           },
           {
   title: "Folding Roofs",
-  desc: "Enhance your outdoor living space with our bespoke folding roof systems, designed to suit the British climate. Easily adapt between open skies and full shelter, allowing you to enjoy your veranda comfortably throughout the year.",
+  slug: "folding-roofs",
+  desc: "Enhance your outdoor living space with our bespoke folding roof systems, designed to suit the British weather. Easily adapt between open skies and full shelter, allowing you to enjoy your veranda comfortably throughout the year.",
   img: new URL('../assets/images/folding roof.png', import.meta.url).href,
   features: [
     "Bi-Folding Roof Design",
@@ -51,9 +55,13 @@ export const Products = () => (
 }
         ].map((item, i) => (
           <div key={i} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-            <img src={item.img} alt={item.title} className="rounded-3xl shadow-xl aspect-video object-cover" referrerPolicy="no-referrer" />
+            <Link to={`/products/${item.slug}`} className="overflow-hidden rounded-3xl shadow-xl block">
+              <img src={item.img} alt={item.title} className="rounded-3xl shadow-xl aspect-video object-cover" referrerPolicy="no-referrer" />
+            </Link>
             <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-dark mb-6">{item.title}</h2>
+              <Link to={`/products/${item.slug}`}>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-dark mb-6 hover:text-primary transition-colors cursor-pointer">{item.title}</h2>
+              </Link>
               <p className="text-muted text-lg mb-8">{item.desc}</p>
               <ul className="space-y-3 mb-10">
                 {item.features.map((f, j) => (

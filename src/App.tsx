@@ -5,6 +5,8 @@ import { ScrollProgress } from './components/ScrollProgress';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
+import { ProductTypes } from './pages/ProductTypes';
+import { MaterialPage } from './pages/MaterialPage';
 import { Gallery } from './pages/Gallery';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
@@ -20,6 +22,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:product" element={<ProductTypes />} />
+            <Route path="/products/:product/:type" element={<MaterialPage />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

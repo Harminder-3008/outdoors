@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 
+const solutionLinks = [
+  { label: 'Aluminium Verandas', to: '/products/aluminium-verandas' },
+  { label: 'Louvered Roofs', to: '/products/louvered-roofs' },
+  { label: 'Glass Sliding Doors', to: '/products/glass-sliding-doors' },
+  { label: 'Folding Roofs', to: '/products/folding-roofs' }
+];
+
 export const Footer = () => (
   <footer className="bg-white pt-24 pb-12 border-t border-black/5">
     <div className="max-w-7xl mx-auto px-6">
@@ -37,9 +44,9 @@ export const Footer = () => (
         <div>
           <h4 className="text-xs uppercase tracking-widest font-bold mb-8 text-dark">Our Solutions</h4>
           <ul className="space-y-4 text-sm font-medium">
-            {['Aluminium Verandas', 'Louvered Roofs', 'Glass Sliding Doors', 'Folding Roofs'].map((item) => (
-              <li key={item}>
-                <Link to="/products" className="text-muted hover:text-primary transition-colors">{item}</Link>
+            {solutionLinks.map((link) => (
+              <li key={link.label}>
+                <Link to={link.to} className="text-muted hover:text-primary transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>
