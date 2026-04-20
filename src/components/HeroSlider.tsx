@@ -50,7 +50,7 @@ export const HeroSlider = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-accent font-bold tracking-[0.3em] text-sm uppercase block mb-6"
           >
-            Authorized Deponti Dealer | Premium Outdoor Living
+          
           </motion.span>
 
           {/* Main Title */}
@@ -58,9 +58,9 @@ export const HeroSlider = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-display font-black mb-6 leading-tight tracking-tighter text-white"
+            className="text-5xl md:text-5xl lg:text-6xl font-display font-black mb-5 leading-tight tracking-tighter text-white"
           >
-            Transform Your Outdoor Space
+           Outdoor Living
           </motion.h1>
 
           {/* Description */}
