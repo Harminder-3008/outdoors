@@ -32,7 +32,7 @@ export const Home = () => (
             </h2>
 
             <p className="text-muted text-lg leading-relaxed mb-10">
-              At Outdoors, we believe every outdoor space has the potential to become something truly exceptional. With over 15 years of experience, we design and deliver premium outdoor solutions that seamlessly combine natural beauty with modern functionality. Our bespoke designs are created to enhance your lifestyle while adding lasting value to your home.
+              At OASIS VERANDAS, a proud Authorized Deponti Dealer, we bring world-class outdoor solutions to your doorstep. With over 15 years of experience combined with Deponti's innovative designs, we deliver premium outdoor solutions that seamlessly combine natural beauty with modern functionality. Our bespoke designs are created to enhance your lifestyle while adding lasting value to your home.
             </p>
 
             <div className="flex gap-10">
@@ -173,8 +173,8 @@ export const Home = () => (
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { name: "Sarah Jenkins", role: "Homeowner", text: "The glass veranda has completely transformed our patio. We use it every single day, regardless of the weather." },
-              { name: "David Thompson", role: "Architect", text: "As an architect, I'm very picky about build quality. Outdoors exceeded my expectations in every way." },
-              { name: "Emma Wilson", role: "Garden Designer", text: "I always recommend Outdoors to my clients. Their designs are sleek, modern, and incredibly durable." },
+              { name: "David Thompson", role: "Architect", text: "As an architect, I'm very picky about build quality. OASIS VERANDAS' Deponti products exceeded my expectations in every way." },
+              { name: "Emma Wilson", role: "Garden Designer", text: "I always recommend OASIS VERANDAS to my clients. Their Deponti designs are sleek, modern, and incredibly durable." },
               { name: "Mark Roberts", role: "Homeowner", text: "Professional from start to finish. The installation team was tidy, efficient, and very polite." }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-black/5">

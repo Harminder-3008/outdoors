@@ -52,27 +52,27 @@ const productTypes = {
   'louvered-roofs': {
     title: 'Louvered Roofs',
     types: [
-      { name: 'Manual Louvered Roof', slug: 'manual-louvered-roof', desc: 'Operated by hand (crank/handle)\nBudget-friendly option\nNo electricity needed\nGood for basic use', img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href },
-      { name: 'Motorized (Automatic) Louvered Roof', slug: 'motorized-automatic-louvered-roof', desc: 'Controlled with remote or switch\nOpen/close with one click\nPremium & most popular\nCan add smart home integration', img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href },
-      { name: 'Smart Louvered Roof (Sensor-Based)', slug: 'smart-louvered-roof-sensor-based', desc: 'Comes with rain, wind, or sun sensors\nAutomatically closes when it rains\nFully automated luxury option\nBest for high-end customers', img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href },
-      { name: 'Insulated Louvered Roof', slug: 'insulated-louvered-roof', desc: 'Louvers have insulated panels\nReduces heat & noise\nBetter for hot weathers (like India)', img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href },
-      { name: 'Aluminium Louvered Roof', slug: 'aluminium-louvered-roof', desc: 'Most common material\nRust-proof, durable, lightweight', img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href }
+      { name: 'Manual Louvered Roof', slug: 'manual-louvered-roof', desc: 'Operated by hand (crank/handle)\nBudget-friendly option\nNo electricity needed\nGood for basic use', img: new URL('../assets/images/manual-louvered-roof.jpeg', import.meta.url).href },
+      { name: 'Motorized (Automatic) Louvered Roof', slug: 'motorized-automatic-louvered-roof', desc: 'Controlled with remote or switch\nOpen/close with one click\nPremium & most popular\nCan add smart home integration', img: new URL('../assets/images/Motorized (Automatic) Louvered Roof.jpeg', import.meta.url).href },
+      { name: 'Smart Louvered Roof (Sensor-Based)', slug: 'smart-louvered-roof-sensor-based', desc: 'Comes with rain, wind, or sun sensors\nAutomatically closes when it rains\nFully automated luxury option\nBest for high-end customers', img: new URL('../assets/images/Smart Louvered Roof (Sensor-Based).jpg', import.meta.url).href },
+      { name: 'Insulated Louvered Roof', slug: 'insulated-louvered-roof', desc: 'Louvers have insulated panels\nReduces heat & noise\nBetter for hot weathers (like India)', img: new URL('../assets/images/Insulated Louvered Roof.jpeg', import.meta.url).href },
+      { name: 'Aluminium Louvered Roof', slug: 'aluminium-louvered-roof', desc: 'Most common material\nRust-proof, durable, lightweight', img: new URL('../assets/images/Aluminium Louvered Roof.jpeg', import.meta.url).href }
     ]
   },
   'glass-sliding-doors': {
     title: 'Glass Sliding Doors',
     types: [
-      { name: 'Single Panel Doors', slug: 'single-panel-doors', desc: 'Single sliding glass panel.', img: new URL('../assets/images/glass image.jpg', import.meta.url).href },
-      { name: 'Multi-Panel Doors', slug: 'multi-panel-doors', desc: 'Multiple sliding glass panels.', img: new URL('../assets/images/glass image.jpg', import.meta.url).href },
-      { name: 'Corner Doors', slug: 'corner-doors', desc: 'Doors designed for corner installations.', img: new URL('../assets/images/glass image.jpg', import.meta.url).href }
+      { name: 'Single Panel Doors', slug: 'single-panel-doors', desc: 'Single sliding glass panel.', img: new URL('../assets/images/singlepanneldoor.jpeg', import.meta.url).href },
+      { name: 'Multi-Panel Doors', slug: 'multi-panel-doors', desc: 'Multiple sliding glass panels.', img: new URL('../assets/images/multipanneldoors.jpeg', import.meta.url).href },
+      { name: 'Corner Doors', slug: 'corner-doors', desc: 'Doors designed for corner installations.', img: new URL('../assets/images/cornerdoors.jpg', import.meta.url).href }
     ]
   },
   'folding-roofs': {
     title: 'Folding Roofs',
     types: [
-      { name: 'Manual Folding Roofs', slug: 'manual-folding-roofs', desc: 'Manually operated folding roofs.', img: new URL('../assets/images/folding roof.png', import.meta.url).href },
-      { name: 'Electric Folding Roofs', slug: 'electric-folding-roofs', desc: 'Electrically powered folding roofs.', img: new URL('../assets/images/folding roof.png', import.meta.url).href },
-      { name: 'Hydraulic Folding Roofs', slug: 'hydraulic-folding-roofs', desc: 'Hydraulically operated folding roofs.', img: new URL('../assets/images/folding roof.png', import.meta.url).href }
+      { name: 'Manual Folding Roofs', slug: 'manual-folding-roofs', desc: 'Manually operated folding roofs.', img: new URL('../assets/images/manualfolding.jpg', import.meta.url).href },
+      { name: 'Electric Folding Roofs', slug: 'electric-folding-roofs', desc: 'Electrically powered folding roofs.', img: new URL('../assets/images/electricfolding.jpg', import.meta.url).href },
+      { name: 'Hydraulic Folding Roofs', slug: 'hydraulic-folding-roofs', desc: 'Hydraulically operated folding roofs.', img: new URL('../assets/images/hydraulicfolding.jpeg', import.meta.url).href }
     ]
   }
 };
@@ -91,7 +91,7 @@ export const ProductTypes = () => {
         <Link to="/products" className="inline-flex items-center gap-2 text-primary hover:text-primary-light mb-8">
           <ArrowLeft size={20} /> Back to Products
         </Link>
-        <h1 className="text-4xl md:text-6xl font-display font-bold text-dark mb-12">{data.title} Types</h1>
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-dark mb-12">{data.title}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.types.map((type, i) => (
             <Link key={i} to={`/products/${product}/${type.slug}`} className="block">

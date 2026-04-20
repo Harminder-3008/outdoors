@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import { OasisLogo } from './OasisLogo';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,10 +46,19 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 border-b border-black/5 shadow-sm' : 'bg-black/20 backdrop-blur-md py-8'}`}>
+    <nav className="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md py-6 border-b border-black/5 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className={`text-2xl font-display font-bold tracking-tighter flex items-center gap-2 group ${scrolled ? 'text-black' : 'text-black'}`}>
-          <span className="text-black group-hover:tracking-widest transition-all duration-500">OUT</span><span className="text-black">DOORS</span>
+        <Link to="/" className="flex items-center gap-3 group hover:opacity-80 transition-opacity duration-300">
+          <div className="w-14 h-14 flex-shrink-0">
+            <OasisLogo className="w-full h-full drop-shadow-sm" />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="text-2xl font-display font-black tracking-wider text-primary">OASIS</span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-display font-bold tracking-[0.15em] text-black">VERANDAS</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-accent px-2 py-0.5 bg-accent/10 rounded">Featuring Deponti Outdoor Systems</span>
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

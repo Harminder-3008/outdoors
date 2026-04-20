@@ -96,7 +96,7 @@ return(
 
           {/* Type */}
           <div>
-            <label className="text-xs font-bold uppercase">Type of Outdoors</label>
+            <label className="text-xs font-bold uppercase">Product Type (Deponti)</label>
             <select name="type" value={form.type} onChange={handleChange}
               className="w-full border rounded-xl px-5 py-4"
             >
@@ -139,7 +139,7 @@ return(
             <div>
               <h4 className="text-xs uppercase tracking-widest font-bold mb-6 text-dark">Direct Contact</h4>
               <p className="text-lg text-muted">+44 20 7123 4567</p>
-              <p className="text-lg text-muted">info@outdoors.com</p>
+              <p className="text-lg text-muted">info@oasisverandas.com</p>
             </div>
           </div>
           <div className="aspect-video rounded-3xl overflow-hidden shadow-lg border border-black/5">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { OasisLogo } from './OasisLogo';
 
 const solutionLinks = [
   { label: 'Aluminium Verandas', to: '/products/aluminium-verandas' },
@@ -13,11 +14,18 @@ export const Footer = () => (
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
         <div>
-          <Link to="/" className="text-2xl font-display font-bold tracking-tighter mb-6 block">
-            <span className="text-primary">OUT</span>DOORS
+          <Link to="/" className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 flex-shrink-0">
+              <OasisLogo className="w-full h-full" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="text-lg font-display font-black text-primary">OASIS</span>
+              <span className="text-xs font-display font-bold tracking-wider text-black">VERANDAS</span>
+            </div>
           </Link>
+          <p className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Working with premium Deponti outdoor systems  </p>
           <p className="text-muted text-sm leading-relaxed mb-8">
-            Specializing in high-end architectural outdoor solutions for discerning homeowners.
+Delivering premium verandas, pergolas, and glass solutions tailored to modern living.
           </p>
           {/* <div className="flex gap-4">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -65,14 +73,14 @@ export const Footer = () => (
             </li>
             <li className="flex gap-4">
               <Mail size={18} className="text-primary shrink-0" />
-              <span className="text-muted">info@outdoors.com</span>
+              <span className="text-muted">info@oasisverandas.com</span>
             </li>
           </ul>
         </div>
       </div>
       
       <div className="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-bold text-muted">
-        <p>&copy; {new Date().getFullYear()} OUTDOORS LIVING SPACES LTD.</p>
+        <p>&copy; {new Date().getFullYear()} OASIS VERANDAS - Authorized Deponti Dealer</p>
         <div className="flex gap-8">
           {/* <a href="#" className="hover:text-dark transition-colors">Privacy</a>
           <a href="#" className="hover:text-dark transition-colors">Terms</a> */}

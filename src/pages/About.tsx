@@ -7,11 +7,13 @@ export const About = () => (
         <div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-dark mb-8">Our Heritage</h1>
           <p className="text-muted text-lg leading-relaxed mb-6">
-            Founded with a passion for architectural design, Outdoors has grown into a leading provider of premium outdoor living solutions. We believe that every garden has the potential to be an extraordinary living space.
+          Founded with a passion for architectural design, OASIS VERANDAS specializes in creating premium outdoor living spaces tailored to modern lifestyles. We work with high-quality systems and trusted brands such as Deponti to deliver elegant and durable veranda and outdoor solutions.
           </p>
+
           <p className="text-muted text-lg leading-relaxed">
-            Our team of designers and engineers work closely with each client to deliver bespoke structures that perfectly complement their home's architecture and their personal style.
-          </p>
+We believe that every garden has the potential to become an extraordinary living space, combining comfort, functionality, and style.</p>
+          <p className="text-muted text-lg leading-relaxed">
+Our team of designers and engineers collaborates closely with each client to create bespoke structures that perfectly complement their home's architecture and reflect their personal taste.          </p>
         </div>
         <img src={slider3Img} alt="About Us" className="rounded-3xl shadow-xl" referrerPolicy="no-referrer" />
       </div>
