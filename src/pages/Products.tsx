@@ -11,48 +11,48 @@ export const Products = () => (
 
       <div className="space-y-32">
         {[
-         {
-  title: "Aluminium Verandas",
-  slug: "aluminium-verandas",
-  desc: "Enhance your outdoor space with our bespoke aluminium verandas, designed for durability and year-round use in the British weather. Combining strength with a sleek, modern finish, they create a seamless transition between your home and garden.",
-  img: new URL('../assets/images/Aluminium vrandas.jpeg', import.meta.url).href,
-  features: [
-    "Durable Aluminium Framework",
-    "Weather-Resistant Design",
-    "Integrated Drainage System",
-  ]
-},
-{
-  title: "Louvered Roofs",
-  slug: "louvered-roofs",
-  desc: "Enjoy complete control over your outdoor environment with our modern louvered roof systems. Designed for the British weather, adjustable slats allow you to manage sunlight, shade, and ventilation with ease.",
- img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href,
-  features: [
-    "Adjustable Louvered Panels",
-    "Weather-Responsive Design",
-    "Integrated LED Lighting",
-  ]
-},
+          {
+            title: "Aluminium Verandas",
+            slug: "aluminium-verandas",
+            desc: "If you choose an aluminium veranda from Deponti, you get class and quality. Aluminium is durable, colour-fast and low maintenance. We work with high quality aluminium for every situation.",
+            img: new URL('../assets/images/Aluminium vrandas.jpeg', import.meta.url).href,
+            features: [""
+              //   "Durable Aluminium Framework",
+              //   "Weather-Resistant Design",
+              //   "Integrated Drainage System",
+            ]
+          },
+          {
+            title: "Louvered Roofs",
+            slug: "louvered-roofs",
+            desc: "With a louvered roof, you decide how much sun and light you like on your terrace. The roof can be opened and closed with a remote control, which means that you are also dry during bad weather. We sell two types of aluminum louvered roofs; One with tilting panels and one with panels that can be slide to the side.",
+            img: new URL('../assets/louvered-roofs.jpeg', import.meta.url).href,
+            features: [""
+              //   "Adjustable Louvered Panels",
+              //   "Weather-Responsive Design",
+              //   "Integrated LED Lighting",
+            ]
+          },
           {
             title: "Glass Sliding Doors",
             slug: "glass-sliding-doors",
-            desc: "Create a stunning new living space with our fully enclosed glass rooms. The perfect blend of indoor comfort and outdoor views.",
-            img: new URL('../assets/images/glass image.jpg', import.meta.url).href,
-            features: ["Sliding Glass Doors", "Thermal Insulation", "Secure Locking"]
+            desc: "The Deponti glass sliding doors offers protection against all weather conditions without making compromises in terms of light or view. This means that you can enjoy the outdoors to the fullest during all seasons.",
+            img: new URL('../assets/images/Glassmain.jpg', import.meta.url).href,
+            features: [""]
           },
           {
-  title: "Folding Roofs",
-  slug: "folding-roofs",
-  desc: "Enhance your outdoor living space with our bespoke folding roof systems, designed to suit the British weather. Easily adapt between open skies and full shelter, allowing you to enjoy your veranda comfortably throughout the year.",
-  img: new URL('../assets/images/folding roof.png', import.meta.url).href,
-  features: [
-    "Bi-Folding Roof Design",
-    "All-Weather Protection",
-    "Manual & Motorised Operation",
-    "High-Quality Aluminium Frames",
-    "Tailored to Your Space"
-  ]
-}
+            title: "Folding Roofs",
+            slug: "folding-roofs",
+            desc: "With a Deponti folding roof, your terrace comes alive. Whatever the weather, you can open or close the roof with a simple press of the remote control. This means that you decide how much sun comes in and that you can still sit outside even in bad weather.",
+            img: new URL('../assets/images/folding roof.png', import.meta.url).href,
+            features: [""
+              //   "Bi-Folding Roof Design",
+              //   "All-Weather Protection",
+              //   "Manual & Motorised Operation",
+              //   "High-Quality Aluminium Frames",
+              //   "Tailored to Your Space"
+            ]
+          }
         ].map((item, i) => (
           <div key={i} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
             <Link to={`/products/${item.slug}`} className="overflow-hidden rounded-3xl shadow-xl block">
