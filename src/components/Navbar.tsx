@@ -143,7 +143,12 @@ export const Navbar = () => {
                         {productsSubmenuOpen && (
                           <div className="ml-4 mt-2 space-y-2">
                             {products.map((p) => (
-                              <Link key={p.name} to={p.path} onClick={() => setIsOpen(false)}>
+                              <Link
+                                key={p.name}
+                                to={p.path}
+                                onClick={() => setIsOpen(false)}
+                                className="block text-lg py-2 text-dark hover:text-primary"
+                              >
                                 {p.name}
                               </Link>
                             ))}
