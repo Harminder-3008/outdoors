@@ -4,8 +4,8 @@ import { ArrowRight, Star, Shield, Clock, CheckCircle2, MessageSquare, Wrench, R
 import { HeroSlider } from '../components/HeroSlider';
 import kitchenImg from '../assets/images/kitchen.jpg';
 import aluminiumVerandasImg from '../assets/images/Aluminium vrandas.jpeg';
-import louveredRoofsImg from '../assets/louvered-roofs.jpeg';
-import glassSlidingDoorsImg from '../assets/images/glass image.jpg';
+import louveredRoofsImg from '../assets/Lrimages/Pinela Deluxe; Aluminium Louvered roof.png';
+import glassSlidingDoorsImg from '../assets/Gdimages/gd2.jpg';
 import foldingRoofsImg from '../assets/images/folding roof.png';
 import slider2Img from '../assets/images/Slider 2.webp';
 
@@ -206,8 +206,8 @@ export const Home = () => (
       </div>
     </section> */}
 
-    
-   
+
+
     {/* Features */}
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -228,7 +228,7 @@ export const Home = () => (
         </div>
       </div>
     </section>
-    
+
 
     {/* CTA */}
     <section className="py-24 bg-primary">
