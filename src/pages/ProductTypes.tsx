@@ -123,7 +123,7 @@ const productTypes = {
   'louvered-roofs': {
     title: 'Louvered Roofs',
     banner: new URL('../assets/Lrimages/lR BANNER.png', import.meta.url).href,
-    description: 'With a louvered roof, you decide how much sun...',
+    description: 'With a louvered roof, you decide how much sun and light you like on your terrace. The roof can be opened and closed with a remote control, which means that you are also dry during bad weather. We sell two types of aluminum louvered roofs; One with tilting panels and one with panels that can be slide to the side. They are supplied in high-quality aluminum in a timeless anthracite color. With the Pinela and Pinela Deluxe louvered roof pergolas , your terrace will become your own paradise every season.',
     types: [
       { name: 'Pinela Deluxe Plus', slug: 'Pinela-Deluxe-Plus', desc: 'Flexible and powerful in a stylish design', img: new URL('../assets/Lrimages/Pinela Deluxe Plus.png', import.meta.url).href },
       { name: 'Pinela Deluxe; Aluminium Louvered roof', slug: 'Pinela-Deluxe-Aluminium-Louvered-roof', desc: 'Enjoy the convertible effect in your own garden', img: new URL('../assets/Lrimages/Pinela Deluxe; Aluminium Louvered roof.png', import.meta.url).href },
@@ -134,7 +134,7 @@ const productTypes = {
   'glass-sliding-doors': {
     title: 'Deponti Fiano Glass sliding doors',
     banner: new URL('../assets/Gdimages/Gd banner.jpg', import.meta.url).href,
-    description: 'With the Deponti Fiano you can turn your veranda...',
+    description: 'Enjoy your garden and your terrace all year round With the Deponti Fiano you can turn your veranda easily into a luxury garden room allowing you to enjoy your garden and terrace all year long. It allows you to create a new place in your home where the indoor and outdoors are merged. The glass panels are available in various height- and width dimensions, can run in three to six rail tracks and have no side frames. Due to this, they offer an free view of your backyard. In addition, a Deponti Fiano glass sliding door system also protects against rain and cold. This allows you to enjoy the ultimate outdoor feeling, even in bad weather. On top of this they also offer some sound reduction',
     types: [
       { img: new URL('../assets/Gdimages/gd1.jpg', import.meta.url).href },
       { img: new URL('../assets/Gdimages/gd2.jpg', import.meta.url).href },
@@ -149,7 +149,7 @@ const productTypes = {
   'folding-roofs': {
     title: 'Verdeca; Folding roof with aluminum frame',
     banner: new URL('../assets/Frimages/FR banner.png', import.meta.url).href,
-    description: 'Ultimate flexibility with a sleek design...',
+    description: 'Enjoy extra living pleasure in the garden through ultimate flexibility. Who would not want that? The Verdeca roof canvas is made of a sun-resistant and water-resistant fabric. Are you sitting under the veranda and want to enjoy the sun? Then, with one push on the button, raise the canvas (partially) so you can immediately enjoy maximum light and the beautiful weather. If you prefer to sit in the shade or seek protection against wind, rain or UV radiation, you can close the screen with the same ease. ',
     types: [
       { img: new URL('../assets/Frimages/Fr1.png', import.meta.url).href },
       { img: new URL('../assets/Frimages/fr2.png', import.meta.url).href },
