@@ -12,9 +12,9 @@ export const HeroSlider = () => {
         transition={{ duration: 1.2 }}
         className="absolute inset-0 z-0"
       >
-        <img 
-          src={slider1Img} 
-          alt="OASIS VERANDAS - Premium Outdoor Solutions" 
+        <img
+          src={slider1Img}
+          alt="OASIS VERANDAS - Premium Outdoor Solutions"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -22,7 +22,7 @@ export const HeroSlider = () => {
 
       {/* Gradient Overlay - Left to Right */}
       <div className="absolute inset-0 z-5 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-      
+
       {/* Decorative Elements */}
       <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl z-1" />
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl z-1" />
@@ -50,7 +50,7 @@ export const HeroSlider = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-accent font-bold tracking-[0.3em] text-sm uppercase block mb-6"
           >
-          
+
           </motion.span>
 
           {/* Main Title */}
@@ -60,7 +60,7 @@ export const HeroSlider = () => {
             transition={{ duration: 0.9, delay: 0.5 }}
             className="text-5xl md:text-5xl lg:text-6xl font-display font-black mb-5 leading-tight tracking-tighter text-white"
           >
-           Outdoor Living
+            Outdoor Living
           </motion.h1>
 
           {/* Description */}
@@ -80,14 +80,14 @@ export const HeroSlider = () => {
             transition={{ duration: 0.9, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link 
-              to="/products" 
+            <Link
+              to="/products"
               className="bg-primary hover:bg-primary-light text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl inline-block text-center"
             >
               Explore Products
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 inline-block text-center backdrop-blur-sm"
             >
               Get in Touch
@@ -108,18 +108,18 @@ export const HeroSlider = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-white/70 text-sm font-semibold">Scroll to explore</span>
-          <svg 
-            className="w-6 h-6 text-white/70" 
-            fill="none" 
-            stroke="currentColor" 
+          {/* <span className="text-white/70 text-sm font-semibold">Scroll to explore</span> */}
+          <svg
+            className="w-6 h-6 text-white/70"
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
         </motion.div>

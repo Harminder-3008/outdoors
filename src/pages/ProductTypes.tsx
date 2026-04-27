@@ -125,9 +125,9 @@ const productTypes = {
     banner: new URL('../assets/Lrimages/lR BANNER.png', import.meta.url).href,
     description: 'With a louvered roof, you decide how much sun...',
     types: [
-      { name: 'Pinela Deluxe Plus', slug: 'Pinela-Deluxe-Plus', desc: 'Flexible...', img: new URL('../assets/Lrimages/Pinela Deluxe Plus.png', import.meta.url).href },
-      { name: 'Pinela Deluxe; Aluminium Louvered roof', slug: 'Pinela-Deluxe-Aluminium-Louvered-roof', desc: 'Enjoy...', img: new URL('../assets/Lrimages/Pinela Deluxe; Aluminium Louvered roof.png', import.meta.url).href },
-      { name: 'Pinela; Aluminium Louvered Roof', slug: 'Pinela-Aluminium-Louvered-Roof', desc: 'Creating...', img: new URL('../assets/Lrimages/Pinela; Aluminium Louvered Roof.png', import.meta.url).href }
+      { name: 'Pinela Deluxe Plus', slug: 'Pinela-Deluxe-Plus', desc: 'Flexible and powerful in a stylish design', img: new URL('../assets/Lrimages/Pinela Deluxe Plus.png', import.meta.url).href },
+      { name: 'Pinela Deluxe; Aluminium Louvered roof', slug: 'Pinela-Deluxe-Aluminium-Louvered-roof', desc: 'Enjoy the convertible effect in your own garden', img: new URL('../assets/Lrimages/Pinela Deluxe; Aluminium Louvered roof.png', import.meta.url).href },
+      { name: 'Pinela; Aluminium Louvered Roof', slug: 'Pinela-Aluminium-Louvered-Roof', desc: 'Creating the perfect light on your own terrace', img: new URL('../assets/Lrimages/Pinela; Aluminium Louvered Roof.png', import.meta.url).href }
     ]
   },
 

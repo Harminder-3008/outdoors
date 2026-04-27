@@ -19,15 +19,8 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    return () => { document.body.style.overflow = "auto"; };
   }, [isOpen]);
 
   const navLinks = [
@@ -46,158 +39,133 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md py-6 border-b border-black/5 shadow-sm">
+    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md py-6 border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-3 group hover:opacity-80 transition-opacity duration-300">
-          <div className="w-14 h-14 flex-shrink-0">
-            <OasisLogo className="w-full h-full drop-shadow-sm" />
+
+        {/* LOGO */}
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-14 h-14">
+            <OasisLogo className="w-full h-full" />
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-2xl font-display font-black tracking-wider text-primary">OASIS</span>
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-display font-bold tracking-[0.15em] text-black">VERANDAS</span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-accent px-2 py-0.5 bg-accent/10 rounded">Featuring Deponti Outdoor Systems</span>
-            </div>
-          </div>
+          <span className="text-2xl font-bold text-primary">OASIS</span>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-xs uppercase tracking-widest font-bold hover:text-primary transition-colors relative group ${location.pathname === link.path ? 'text-primary' : 'text-black'}`}
-            >
-              {link.name}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-            </Link>
-          ))}
-          <Link to="/contact" className="bg-primary text-white px-8 py-3 rounded-full text-xs font-bold hover:bg-primary-light transition-all shadow-lg shadow-primary/10">
-            GET A QUOTE
-          </Link>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button className={`md:hidden p-3 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 text-black`} onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-    {createPortal(
-  <AnimatePresence>
-    {isOpen && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[9999] md:hidden"
-      >
-        {/* Overlay */}
-        <div
-          className="absolute inset-0 bg-black/60"
-          onClick={() => setIsOpen(false)}
-        />
-
-        {/* Drawer */}
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ duration: 0.4 }}
-          className="absolute right-0 top-0 h-full w-[80%] bg-white shadow-2xl flex flex-col p-10 gap-8"
-        >
-          <button
-            className="self-end"
-            onClick={() => setIsOpen(false)}
-          >
-            <X size={28} />
-          </button>
 
           {navLinks.map((link) => {
-            if (link.name === 'Products') {
+
+            // 🔥 PRODUCTS DROPDOWN
+            if (link.name === "Products") {
               return (
-                <div key={link.name}>
-                  <button
-                    onClick={() => {
-                      if (productsSubmenuOpen) {
-                        // Second click - go to products page
-                        navigate('/products');
-                        setIsOpen(false);
-                        setProductsSubmenuOpen(false);
-                      } else {
-                        // First click - open submenu
-                        setProductsSubmenuOpen(true);
-                      }
-                    }}
-                    className={`text-xl font-bold flex items-center justify-between w-full ${
-                      location.pathname.startsWith('/products')
-                        ? "text-primary"
-                        : "text-dark"
-                    }`}
+                <div key={link.name} className="relative group">
+
+                  <Link
+                    to="/products"
+                    className="text-xs uppercase font-bold text-black hover:text-primary"
                   >
-                    {link.name}
-                    <span className={`transform transition-transform ${productsSubmenuOpen ? 'rotate-45' : ''}`}>
-                      +
-                    </span>
-                  </button>
-                  
-                  {productsSubmenuOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="ml-4 mt-2 space-y-2"
-                    >
-                      {products.map((product) => (
-                        <Link
-                          key={product.name}
-                          to={product.path}
-                          onClick={() => {
-                            setIsOpen(false);
-                            setProductsSubmenuOpen(false);
-                          }}
-                          className="block text-lg text-muted hover:text-primary transition-colors"
-                        >
-                          {product.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
+                    Products
+                  </Link>
+
+                  {/* DROPDOWN */}
+                  <div className="absolute left-0 top-full w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+
+                    {products.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className="block px-6 py-3 text-sm hover:bg-gray-100 hover:text-primary"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+
+                  </div>
                 </div>
               );
             }
-            
+
+            // NORMAL LINKS
             return (
               <Link
                 key={link.name}
                 to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`text-xl font-bold ${
-                  location.pathname === link.path
-                    ? "text-primary"
-                    : "text-dark"
-                }`}
+                className={`text-xs uppercase font-bold ${location.pathname === link.path ? 'text-primary' : 'text-black'
+                  }`}
               >
                 {link.name}
               </Link>
             );
           })}
 
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className="bg-primary text-white px-6 py-3 rounded-full font-bold mt-4 text-center"
-          >
+          <Link to="/contact" className="bg-primary text-white px-6 py-2 rounded-full text-xs font-bold">
             GET A QUOTE
           </Link>
-        </motion.div>
-      </motion.div>
-    )}
-  </AnimatePresence>,
-  document.body // 🔥 THIS IS THE MAGIC
-)}
+
+        </div>
+
+        {/* MOBILE BUTTON */}
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div className="fixed inset-0 z-[9999] md:hidden">
+
+              <div className="absolute inset-0 bg-black/60" onClick={() => setIsOpen(false)} />
+
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                className="absolute right-0 top-0 h-full w-[80%] bg-white p-8 flex flex-col gap-6"
+              >
+
+                <button onClick={() => setIsOpen(false)}>
+                  <X />
+                </button>
+
+                {navLinks.map((link) => {
+                  if (link.name === 'Products') {
+                    return (
+                      <div key={link.name}>
+                        <button
+                          onClick={() => setProductsSubmenuOpen(!productsSubmenuOpen)}
+                          className="font-bold text-lg w-full text-left"
+                        >
+                          Products +
+                        </button>
+
+                        {productsSubmenuOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {products.map((p) => (
+                              <Link key={p.name} to={p.path} onClick={() => setIsOpen(false)}>
+                                {p.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link key={link.name} to={link.path} onClick={() => setIsOpen(false)}>
+                      {link.name}
+                    </Link>
+                  );
+                })}
+
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </nav>
   );
 };
