@@ -116,6 +116,12 @@ const productTypes = {
         slug: 'Louvres',
         desc: 'Fixed and Rotating Louvres',
         img: new URL('../assets/AVimages/Louvres.jpg', import.meta.url).href
+      },
+      {
+        name: 'Accessories',
+        slug: 'accessories',
+        desc: 'Enhance your outdoor space with premium accessories',
+        img: new URL('../assets/AVimages/accessories.jpg', import.meta.url).href
       }
     ]
   },
@@ -193,7 +199,7 @@ export const ProductTypes = () => {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.types.map((type, i) => (
+          {/* {data.types.map((type, i) => (
             <div key={i} className="bg-light p-6 rounded-2xl hover:shadow-lg transition">
 
               <img
@@ -211,7 +217,48 @@ export const ProductTypes = () => {
               )}
 
             </div>
-          ))}
+          ))} */}
+
+          {data.types.map((type, i) => {
+            const isAccessories = type.slug?.toLowerCase() === "accessories";
+
+            if (isAccessories) {
+              return (
+                <Link
+                  to="/accessories"
+                  key={i}
+                  className="bg-light p-6 rounded-2xl hover:shadow-lg transition block"
+                >
+                  <img
+                    src={type.img}
+                    className="w-full h-48 object-cover rounded-xl mb-4"
+                  />
+
+                  <h3 className="text-2xl font-bold mb-4">{type.name}</h3>
+                  <p>{type.desc}</p>
+                </Link>
+              );
+            }
+
+            return (
+              <div
+                key={i}
+                className="bg-light p-6 rounded-2xl hover:shadow-lg transition"
+              >
+                <img
+                  src={type.img}
+                  onClick={() => setPreviewImg(type.img)}
+                  className="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer"
+                />
+
+                {type.name && (
+                  <h3 className="text-2xl font-bold mb-4">{type.name}</h3>
+                )}
+
+                {type.desc && <p>{type.desc}</p>}
+              </div>
+            );
+          })}
         </div>
       </div>
 

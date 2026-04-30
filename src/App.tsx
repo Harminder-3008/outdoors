@@ -10,6 +10,7 @@ import { MaterialPage } from './pages/MaterialPage';
 import { Gallery } from './pages/Gallery';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { Accessories } from './pages/Accessories';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:product" element={<ProductTypes />} />
             <Route path="/products/:product/:type" element={<MaterialPage />} />
+            <Route path="/accessories" element={<Accessories />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
