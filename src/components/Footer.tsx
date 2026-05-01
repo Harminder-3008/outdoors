@@ -23,9 +23,9 @@ export const Footer = () => (
               <span className="text-xs font-display font-bold tracking-wider text-black">VERANDAS</span>
             </div>
           </Link>
-          <p className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Working with premium Deponti outdoor systems  </p>
+          <p className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Deponti Partners</p>
           <p className="text-muted text-sm leading-relaxed mb-8">
-Delivering premium verandas, pergolas, and glass solutions tailored to modern living.
+            Delivering premium verandas, pergolas, and glass solutions tailored to modern living.
           </p>
           {/* <div className="flex gap-4">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -35,7 +35,7 @@ Delivering premium verandas, pergolas, and glass solutions tailored to modern li
             ))}
           </div> */}
         </div>
-        
+
         <div>
           <h4 className="text-xs uppercase tracking-widest font-bold mb-8 text-dark">Quick Links</h4>
           <ul className="space-y-4 text-sm font-medium">
@@ -78,7 +78,7 @@ Delivering premium verandas, pergolas, and glass solutions tailored to modern li
           </ul>
         </div>
       </div>
-      
+
       <div className="pt-10 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-bold text-muted">
         <p>&copy; {new Date().getFullYear()} OASIS VERANDAS - Authorized Deponti Dealer</p>
         <div className="flex gap-8">
