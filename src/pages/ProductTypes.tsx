@@ -121,7 +121,7 @@ const productTypes = {
         name: 'Accessories',
         slug: 'accessories',
         desc: 'Enhance your outdoor space with premium accessories',
-        img: new URL('../assets/AVimages/accessories.jpg', import.meta.url).href
+        img: new URL('../assets/AVimages/Accessories.jpg', import.meta.url).href
       }
     ]
   },
