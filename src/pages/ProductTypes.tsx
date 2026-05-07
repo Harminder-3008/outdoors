@@ -117,12 +117,12 @@ const productTypes = {
         desc: 'Fixed and Rotating Louvres',
         img: new URL('../assets/AVimages/Louvres.jpg', import.meta.url).href
       },
-      {
-        name: 'Accessories',
-        slug: 'accessories',
-        desc: 'Enhance your outdoor space with premium accessories',
-        img: new URL('../assets/AVimages/Accessories.jpg', import.meta.url).href
-      }
+      // {
+      //   name: 'Accessories',
+      //   slug: 'accessories',
+      //   desc: 'Enhance your outdoor space with premium accessories',
+      //   img: new URL('../assets/AVimages/Accessories.jpg', import.meta.url).href
+      // }
     ]
   },
 

@@ -52,6 +52,13 @@ export const Products = () => (
               //   "High-Quality Aluminium Frames",
               //   "Tailored to Your Space"
             ]
+          },
+          {
+            title: 'Accessories',
+            slug: 'accessories',
+            desc: 'Enhance your outdoor space with premium accessories',
+            img: new URL('../assets/AVimages/Accessories.jpg', import.meta.url).href,
+            features: [""]
           }
         ].map((item, i) => (
           <div key={i} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>

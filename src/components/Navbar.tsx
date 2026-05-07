@@ -36,6 +36,7 @@ export const Navbar = () => {
     { name: 'Louvered Roofs', path: '/products/louvered-roofs' },
     { name: 'Glass Sliding Doors', path: '/products/glass-sliding-doors' },
     { name: 'Folding Roofs', path: '/products/folding-roofs' },
+    { name: 'Accessories', path: '/products/accessories' },
   ];
 
   return (
